@@ -1,0 +1,102 @@
+<!-- Form Game 
+Problem
+Create a form game where you have to submit a form in 15 seconds.
+if form is submitted in 15 seconds, print a congrats message and show form data on web page.
+if not in 15 seconds, save the form data to localstorage and alert('you lost')
+form should have a minimum of 7 fields -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+    <h1>String localstorage</h1>
+    <form id="customForm">
+    <input type="text" id="n1" placeholder="enter a string"/><br><br>
+    <input type="text" id="n2" placeholder="enter a string"/><br><br>
+    <input type="text" id="n3" placeholder="enter a string"/><br><br>
+    <input type="text" id="n4" placeholder="enter a string"/><br><br>
+    <input type="text" id="n5" placeholder="enter a string"/><br><br>
+    <input type="text" id="n6" placeholder="enter a string"/><br><br>
+    <input type="text" id="n7" placeholder="enter a string"/><br><br>
+    </form>
+    <button id="submit" onclick="Additems()">Submit</button>
+   
+    <div id="myDIV"></div>
+    <script>
+        var n1;
+        var n2;
+        var n3;
+        var n4;
+        var n5;
+        var n6;
+        var n7;
+        var time = 15;
+        setTimeout(function(){
+            time=16;
+        },16000);
+        function submitForm() {
+            document.getElementById("customForm").submit()
+        }
+        document.getElementById('submit').onclick = function() {
+            var p1 = document.createElement("P");
+            var p2= document.createElement("P");
+            var p3= document.createElement("P");
+            var p4= document.createElement("P");
+            var p5= document.createElement("P");
+            var p6= document.createElement("P");
+            var p7= document.createElement("P");
+            //getting values at runtime
+            var n1 = document.getElementById('n1').value;
+            var n2 = document.getElementById('n2').value;
+            var n3 = document.getElementById('n3').value;
+            var n4 = document.getElementById('n4').value;
+            var n5 = document.getElementById('n5').value;
+            var n6 = document.getElementById('n6').value;
+            var n7 = document.getElementById('n7').value;
+            if(time == 15)
+            {
+                alert("Congrates");
+                //addiing content to paragraph
+                p1.textContent=n1;
+                p2.textContent=n2;
+                p3.textContent=n3;
+                p4.textContent=n4;
+                p5.textContent=n5;
+                p6.textContent=n6;
+                p7.textContent=n7;
+                //appending all para's to div
+                var d1=document.getElementById("myDIV").appendChild(p1);
+                var d2=document.getElementById("myDIV").appendChild(p2);
+                var d3=document.getElementById("myDIV").appendChild(p3);
+                var d4=document.getElementById("myDIV").appendChild(p4);
+                var d5=document.getElementById("myDIV").appendChild(p5);
+                var d6=document.getElementById("myDIV").appendChild(p6);
+                var d7=document.getElementById("myDIV").appendChild(p7);
+            }
+            else
+            {
+                alert("you lost");
+                localStorage.setItem("Name1",n1)
+                localStorage.setItem("Name2",n2)
+                localStorage.setItem("Name3",n3)
+                localStorage.setItem("Name4",n4)
+                localStorage.setItem("Name5",n5)
+                localStorage.setItem("Name6",n6)
+                localStorage.setItem("Name7",n7)
+            }
+        }
+    </script>
+    
+    
+</body>
+</html>
+
