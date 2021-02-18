@@ -1,0 +1,50 @@
+<!-- String Prototype
+Problem
+write a method on String.prototype that will reverse the string you provide.
+suppose, var str='masai', on using str.reverse(), it should output 'iasam'
+first write your own function that can reverse a string. see how you can use loop for that.
+once function is done, see how you can add that function to String.prototype so every string 
+can use it like str.reverse() -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>String Prototype</h1>
+    <input type="text" id="string" placeholder="enter a string"/>
+    <button onclick="Strreverse()">Reverse</button>
+    <div id="myDIV">
+       
+    </div>
+
+    <script>
+        function Strreverse() {
+            var para = document.createElement("P");
+            var string = document.getElementById('string').value;
+            para.textContent=string;
+            document.getElementById("myDIV").appendChild(para);
+            var string = document.getElementById('string').value=" ";
+
+            
+            var reverse = '';
+            for (var i = string.length - 1; i >= 0; i--){
+                reverse += string[i];
+            }
+            para.textContent=reverse;
+            
+           
+        }
+        
+
+        
+    </script>
+</body>
+</html>
+
+
